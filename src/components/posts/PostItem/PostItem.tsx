@@ -29,7 +29,13 @@ const PostItem: React.FC<Props> = props => {
 			<Link href={linkPath}>
 				<a>
 					<div className={styles.image}>
-						<Image src={imagePath} alt={title} height={300} width={200} />
+						<Image
+							src={imagePath}
+							alt={title}
+							height={200}
+							width={300}
+							layout="responsive"
+						/>
 					</div>
 
 					<div className={styles.content}>
