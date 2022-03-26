@@ -12,25 +12,25 @@ const DUMMY_POSTS: Post[] = [
 		title: "Getting Started with Next.js",
 		excerpt:
 			"NextJS is tje React framework for production - it makes fullstack React apps and sites a breeze and ships with build-in SSR.",
-		image: "getting-started-with-nextjs.jpg",
+		image: "getting-started-nextjs.png",
 		date: "2022-02-10",
 	},
 	{
 		id: 2,
-		slug: "getting-started-with-nextjs2",
+		slug: "getting-started-with-nextjs",
 		title: "Getting Started with Next.js",
 		excerpt:
 			"NextJS is tje React framework for production - it makes fullstack React apps and sites a breeze and ships with build-in SSR.",
-		image: "getting-started-with-nextjs.jpg",
+		image: "getting-started-nextjs.png",
 		date: "2022-02-10",
 	},
 	{
 		id: 3,
-		slug: "getting-started-with-nextjs3",
+		slug: "getting-started-with-nextjs",
 		title: "Getting Started with Next.js",
 		excerpt:
 			"NextJS is tje React framework for production - it makes fullstack React apps and sites a breeze and ships with build-in SSR.",
-		image: "getting-started-with-nextjs.jpg",
+		image: "getting-started-nextjs.png",
 		date: "2022-02-10",
 	},
 ];
