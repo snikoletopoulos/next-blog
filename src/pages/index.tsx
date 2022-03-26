@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 
-import Hero from "src/components/home-page/Hero/Hero";
+import Hero from "components/home-page/Hero/Hero";
 
 const HomePage: NextPage = () => {
 	return (
