@@ -5,7 +5,7 @@ import { Post } from "types/post.types";
 import Hero from "components/home-page/Hero/Hero";
 import FeaturedPosts from "components/home-page/FeaturedPosts/FeaturedPosts";
 
-const DUMMY_POSTS: Post[] = [
+export const DUMMY_POSTS: Post[] = [
 	{
 		id: 1,
 		slug: "getting-started-with-nextjs",
