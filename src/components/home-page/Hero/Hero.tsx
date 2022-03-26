@@ -5,7 +5,7 @@ const Hero: React.FC = () => {
 	return (
 		<section className={styles["hero"]}>
 			<div className={styles["image"]}>
-				<Image src="/images/site/max.png" alt="Max" width={300} height={300} />
+				<Image src="/images/site/stavros.png" alt="Stavros" width={300} height={300} />
 			</div>
 			<h1>Hi, I'm Stavros</h1>
 			<p>
