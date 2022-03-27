@@ -5,7 +5,7 @@ import matter from "gray-matter";
 
 import { Post, PostMeta } from "types/post.types";
 
-const postsDirectory = path.join(process.cwd(), "posts");
+const postsDirectory = path.join(process.cwd(), "src", "posts");
 
 const getPostData = (fileName: string): Post => {
 	const filePath = path.join(postsDirectory, fileName);
