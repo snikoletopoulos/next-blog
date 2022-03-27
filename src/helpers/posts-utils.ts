@@ -7,7 +7,9 @@ import { Post, PostMeta } from "types/post.types";
 
 const postsDirectory = path.join(process.cwd(), "src", "posts");
 
-const getPostData = (postIdentifier: string): Post => {
+export const getPostsFiles = () => fs.readdirSync(postsDirectory);
+
+export const getPostData = (postIdentifier: string): Post => {
 	const postSlug = postIdentifier.replace(/\.md$/, ""); // remove .md extension
 	const filePath = path.join(postsDirectory, `${postIdentifier}.md`);
 	const fileContent = fs.readFileSync(filePath, "utf-8");
@@ -21,7 +23,7 @@ const getPostData = (postIdentifier: string): Post => {
 };
 
 export const getAllPosts = (): Post[] => {
-	const postFiles = fs.readdirSync(postsDirectory);
+	const postFiles = getPostsFiles();
 
 	const posts = postFiles.map(fileName => getPostData(fileName));
 
