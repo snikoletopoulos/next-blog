@@ -13,7 +13,7 @@ const PostsGrid: React.FC<Props> = props => {
 		<ul className={styles.grid}>
 			{props.posts.map(post => (
 				<PostItem
-					key={post.id}
+					key={post.title}
 					title={post.title}
 					date={post.date}
 					excerpt={post.excerpt}
