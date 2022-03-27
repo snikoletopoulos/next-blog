@@ -5,6 +5,10 @@ import { Post } from "types/post.types";
 
 import PostHeader from "components/posts/PostHeader/PostHeader";
 
+type ReactMarkdownRenderers = React.ComponentProps<
+	typeof ReactMarkdown
+>["components"];
+
 interface Props {
 	post: Post;
 }
