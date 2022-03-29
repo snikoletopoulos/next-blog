@@ -41,14 +41,11 @@ const PostContent: React.FC<Props> = props => {
 			return <p>{paragraph.children}</p>;
 		},
 		code(code) {
-			console.log(code);
 			const language = code.className?.split("-")[1];
 			return (
-				<SyntaxHighlighter
-					language={language}
-					children={code.children}
-					style={atomDark}
-				/>
+				<SyntaxHighlighter language={language} style={atomDark}>
+					{code.children}
+				</SyntaxHighlighter>
 			);
 		},
 	};
