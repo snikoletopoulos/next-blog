@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 
-import { MongoClient } from "mongodb";
+import { MongoClient, ObjectId } from "mongodb";
 
 interface Message {
 	email: string;
@@ -34,7 +34,12 @@ const handler = async (req: NextApiRequest, res: NextApiResponse<Response>) => {
 	}
 
 	// Store db
-	const newMessage = {
+	const newMessage: {
+		id?: ObjectId;
+		name: string;
+		email: string;
+		message: string;
+	} = {
 		email,
 		name,
 		message,
