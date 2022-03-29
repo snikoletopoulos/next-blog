@@ -1,5 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 
+import { MongoClient } from "mongodb";
+
 interface Message {
 	email: string;
 	name: string;
@@ -11,7 +13,7 @@ interface Response {
 	data?: Message;
 }
 
-const handler = (req: NextApiRequest, res: NextApiResponse<Response>) => {
+const handler = async (req: NextApiRequest, res: NextApiResponse<Response>) => {
 	if (req.method !== "POST") {
 		res.status(405).json({ message: "Method not allowed" });
 		return;
@@ -38,6 +40,25 @@ const handler = (req: NextApiRequest, res: NextApiResponse<Response>) => {
 		message,
 	};
 
+	let client: MongoClient;
+
+	try {
+		client = await MongoClient.connect(process.env.MONGO_URL ?? "", {});
+	} catch (error) {
+		res.status(500).json({ message: "Error connecting to database" });
+		return;
+	}
+
+	const db = client.db("next-blog");
+	try {
+		const result = await db.collection("messages").insertOne(newMessage);
+		newMessage.id = result.insertedId;
+	} catch (error) {
+		res.status(500).json({ message: "Error saving message" });
+		client.close();
+	}
+
+	client.close();
 	res.status(200).json({ message: "Message sent", data: newMessage });
 };
 
