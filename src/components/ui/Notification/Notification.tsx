@@ -1,7 +1,7 @@
 import styles from "./Notification.module.css";
-import type { Notification } from "components/ContactForm/ContactForm";
+import type { NotificationObject } from "components/ContactForm/ContactForm";
 
-const Notification: React.FC<Notification> = props => {
+const Notification: React.FC<NotificationObject> = props => {
 	const { title, message, status } = props;
 
 	let statusClasses = "";
