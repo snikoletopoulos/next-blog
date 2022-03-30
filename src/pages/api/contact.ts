@@ -1,13 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 
-import { MongoClient, ObjectId } from "mongodb";
-
-interface Message {
-	id?: ObjectId;
-	email: string;
-	name: string;
-	message: string;
-}
+import { MongoClient } from "mongodb";
+import { Message } from "types/contact.types";
 
 interface Response {
 	message: string;
