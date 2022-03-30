@@ -1,4 +1,5 @@
 import type { NextPage, GetStaticProps } from "next";
+import Head from "next/head";
 
 import { Post } from "types/post.types";
 import { getFeaturedPosts } from "helpers/posts-utils";
@@ -13,6 +14,13 @@ interface StaticProps {
 const HomePage: NextPage<StaticProps> = props => {
 	return (
 		<>
+			<Head>
+				<title>Stavros's Blog</title>
+				<meta
+					name="description"
+					content="I post about programming and web/mobile development"
+				/>
+			</Head>
 			<Hero />
 			<FeaturedPosts posts={props.posts} />
 		</>

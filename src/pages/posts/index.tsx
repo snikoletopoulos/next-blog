@@ -1,4 +1,5 @@
 import type { GetStaticProps, NextPage } from "next";
+import Head from "next/head";
 
 import { Post } from "types/post.types";
 
@@ -10,7 +11,18 @@ interface StaticProps {
 }
 
 const AllPostsPage: NextPage<StaticProps> = props => {
-	return <AllPosts posts={props.posts} />;
+	return (
+		<>
+			<Head>
+				<title>All Posts</title>
+				<meta
+					name="description"
+					content="A list of all programming-related tutorials and posts!"
+				/>
+			</Head>
+			<AllPosts posts={props.posts} />
+		</>
+	);
 };
 
 export default AllPostsPage;

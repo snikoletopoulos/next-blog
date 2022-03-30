@@ -1,4 +1,5 @@
 import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
+import Head from "next/head";
 
 import { Post } from "types/post.types";
 import { ParsedUrlQuery } from "querystring";
@@ -15,7 +16,15 @@ interface StaticProps {
 }
 
 const PostDetailPage: NextPage<StaticProps> = props => {
-	return <PostContent post={props.post} />;
+	return (
+		<>
+			<Head>
+				<title>{props.post.title}</title>
+				<meta name="description" content={props.post.excerpt} />
+			</Head>
+			<PostContent post={props.post} />
+		</>
+	);
 };
 
 export default PostDetailPage;
