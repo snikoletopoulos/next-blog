@@ -23,6 +23,17 @@ const ContactForm: React.FC = () => {
 	);
 	const [requestError, setRequestError] = useState<string>("");
 
+	useEffect(() => {
+		if (requestStatus === "success" || requestStatus === "error") {
+			const timer = setTimeout(() => {
+				setRequestStatus(null);
+				setRequestError("");
+			}, 3000);
+
+			return () => clearTimeout(timer);
+		}
+	}, [requestStatus]);
+
 	const handleMessageSend: React.FormEventHandler<
 		HTMLFormElement
 	> = async event => {
