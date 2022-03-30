@@ -49,6 +49,9 @@ const ContactForm: React.FC = () => {
 			});
 
 			setRequestStatus("success");
+			setEmail("");
+			setName("");
+			setMessage("");
 		} catch (error) {
 			if (error instanceof Error) {
 				setRequestError(
